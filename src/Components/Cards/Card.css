@@ -1,0 +1,56 @@
+.card {
+  border: 3px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  border-radius: 10px;
+  width: calc(25% - 40px);
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
+}
+
+.card_img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card_title {
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: calc(33.333% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+
+  .card_title {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+
+  .card_title {
+    font-size: 0.9em;
+  }
+}

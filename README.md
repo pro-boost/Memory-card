@@ -1,8 +1,13 @@
-# React + Vite
+# Card Game React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This project is a simple card game built using React. The application fetches images and information from an external API and displays them on cards. The objective of the game is to click on the cards in a random order, and the application keeps track of the current score and the best score achieved.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Fetches images and information from an external API.
+- Displays a set of cards with images and text.
+- Shuffles the cards randomly each time the user clicks on one.
+- Keeps track of the current score.
+- Displays the highest score achieved (Best Score).
