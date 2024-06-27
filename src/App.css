@@ -1,6 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/pokemon-solid");
 body {
-  background-image: url(./assets/jackson-bakker-pokeballs-compressed.jpg);
+  background-image: url("./assets/jackson-bakker-pokeballs-compressed.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
