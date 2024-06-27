@@ -5,8 +5,8 @@ function Card({ photo, onClick }) {
     <div className="card" onClick={onClick}>
       <img
         className="card_img"
-        src={photo.sprites.front_default}
-        alt={photo.name}
+        src={`https://img.pokemondb.net/artwork/${photo.name}.jpg`}
+        alt={`${photo.name} img`}
       />
       <h2 className="Card_title">{photo.name}</h2>
     </div>

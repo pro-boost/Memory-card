@@ -56,7 +56,7 @@ function App() {
     <>
       <div className="body">
         <div className="title">
-          <h1>Pokèmon Memory-Card</h1>
+          <h1>Pokémon Memory-Card</h1>
           <p>
             Test your memory! Click on each Pokémon card only once. If you click
             on the same card twice, your score resets to zero. Try to click all
