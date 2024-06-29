@@ -21,6 +21,27 @@ function Game() {
     return array.sort(() => Math.random() - 0.5);
   };
 
+  const fetchPhotos = async (limit) => {
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=${limit}`;
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      const pokemonData = await Promise.all(
+        data.results.map(async (pokemon) => {
+          const res = await fetch(pokemon.url);
+          return res.json();
+        })
+      );
+      setShuffledPhotos(shuffleArray(pokemonData));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPhotos(cards);
+  }, [cards]);
+
   const handleCardClick = (photo) => {
     if (clickedCards.includes(photo.name)) {
       setScore(0);
@@ -47,32 +68,12 @@ function Game() {
     setShuffledPhotos(shuffleArray([...shuffledPhotos]));
   };
 
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      const apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=${cards}`;
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        const pokemonData = await Promise.all(
-          data.results.map(async (pokemon) => {
-            const res = await fetch(pokemon.url);
-            return res.json();
-          })
-        );
-        setShuffledPhotos(shuffleArray(pokemonData));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchPhotos();
-  }, [cards, level]);
-
   const handleNextLevel = () => {
     setLevel((prevLevel) => prevLevel + 1);
     setCards((prevCards) => prevCards + 4);
     setShowLevelModal(false);
     setScore(0);
+    setClickedCards([]);
   };
 
   const handleRestartGame = () => {
@@ -85,25 +86,7 @@ function Game() {
     setShowLevelModal(false);
     setShowFailModal(false);
     setShowSuccessModal(false);
-
-    // Refetch photos to reset the game
-    const fetchPhotos = async () => {
-      const apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=4`;
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        const pokemonData = await Promise.all(
-          data.results.map(async (pokemon) => {
-            const res = await fetch(pokemon.url);
-            return res.json();
-          })
-        );
-        setShuffledPhotos(shuffleArray(pokemonData));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchPhotos();
+    fetchPhotos(4); // Refetch photos to reset the game
   };
 
   return (
