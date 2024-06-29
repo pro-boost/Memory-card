@@ -8,5 +8,6 @@ export default defineConfig({
     alias: {},
     extensions: [".js", ".jsx"],
   },
+  base: "/Memory-card/",
   optimizeDeps: {},
 });
