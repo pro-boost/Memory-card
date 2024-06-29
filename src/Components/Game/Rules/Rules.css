@@ -1,0 +1,51 @@
+.welcome_container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.welcome_container h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: "Pokemon Solid", sans-serif;
+  font-weight: normal;
+  color: #f8b400;
+}
+
+.welcome_container p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  width: 80%;
+  text-align: center;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.welcome_container button {
+  padding: 12px 24px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: #f8b400;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  font-family: "Pokemon Solid", sans-serif;
+  font-weight: normal;
+}
+
+.welcome_container button:hover {
+  background-color: #ffa500;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
